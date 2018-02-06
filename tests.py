@@ -22,9 +22,9 @@ class FormatPriceTestCase(unittest.TestCase):
         self.assertEqual(formatted_price, '123 456.93')
 
     def test_round_half_up(self):
-        price = convert_to_decimal('123456.6666')
+        price = convert_to_decimal('123456.5555')
         formatted_price = format_price(price)
-        self.assertEqual(formatted_price, '123 456.67')
+        self.assertEqual(formatted_price, '123 456.56')
 
     def test_return_error_value(self):
         price = convert_to_decimal('123456.abc')
