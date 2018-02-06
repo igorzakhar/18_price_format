@@ -45,7 +45,8 @@ Incorrect value
 Набор тестов включает в себя следующие тесты:  
 - ввод строкового представления целого числа int;
 - ввод строкового представления числа с плавающей запятой float;
-- ввод некорректных данных;
+- конвертирование некорректных данных;
+- форматирование некорректных данных;
 - проверка округления  ROUND_HALF_UP (округление вверх, если цифра пять и больше);
 - ввод строкового представления числа типа float с нулями после запятой.  
 
@@ -53,14 +54,15 @@ Incorrect value
 
 ```
 $ python test.py -v
+test_convert_invalid_value (__main__.FormatPriceTestCase) ... ok
+test_format_invalid_value (__main__.FormatPriceTestCase) ... ok
 test_input_float_string (__main__.FormatPriceTestCase) ... ok
 test_input_integer_string (__main__.FormatPriceTestCase) ... ok
-test_return_error_value (__main__.FormatPriceTestCase) ... ok
 test_round_half_up (__main__.FormatPriceTestCase) ... ok
 test_trailing_zeros_value (__main__.FormatPriceTestCase) ... ok
 
 ----------------------------------------------------------------------
-Ran 5 tests in 0.001s
+Ran 6 tests in 0.001s
 
 OK
 ```

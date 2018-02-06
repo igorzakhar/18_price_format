@@ -26,9 +26,13 @@ class FormatPriceTestCase(unittest.TestCase):
         formatted_price = format_price(price)
         self.assertEqual(formatted_price, '123 456.56')
 
-    def test_return_error_value(self):
+    def test_convert_invalid_value(self):
         price = convert_to_decimal('123456.abc')
         self.assertIsInstance(price, InvalidOperation)
+
+    def test_format_invalid_value(self):
+        with self.assertRaises(ValueError):
+            format_price('123456789')
 
 
 if __name__ == '__main__':
