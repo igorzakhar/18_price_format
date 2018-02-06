@@ -10,8 +10,10 @@ def convert_to_decimal(price):
 
 
 def format_price(price):
-    formatted_price = '{:,}'.format(price.normalize()).replace(',', ' ')
-    return formatted_price
+    try:
+        return '{:,}'.format(price.normalize()).replace(',', ' ')
+    except AttributeError as err:
+        raise ValueError('Argument <price> has invalid value.')
 
 
 if __name__ == '__main__':
