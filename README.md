@@ -33,9 +33,8 @@ Incorrect value
 Пример использования:
 
 ```python
->>> from format_price import convert_to_decimal, format_price
->>> price = convert_to_decimal('123456.93333')
->>> formatted_price = format_price(price)
+>>> from format_price import format_price
+>>> formatted_price = format_price(123456.93333)
 >>> formatted_price
 '123 456.93'
 ```
@@ -45,8 +44,7 @@ Incorrect value
 Набор тестов включает в себя следующие тесты:  
 - ввод строкового представления целого числа int;
 - ввод строкового представления числа с плавающей запятой float;
-- конвертирование некорректного значения;
-- форматирование некорректного значения;
+- ввод некорректного значения;
 - проверка округления  ROUND_HALF_UP (округление вверх, если цифра пять и больше);
 - ввод строкового представления числа типа float с нулями после запятой.  
 
@@ -54,17 +52,16 @@ Incorrect value
 
 ```
 $ python test.py -v
-test_convert_invalid_value (__main__.FormatPriceTestCase) ... ok
-test_format_invalid_value (__main__.FormatPriceTestCase) ... ok
 test_input_float_string (__main__.FormatPriceTestCase) ... ok
+test_input_incorrect_value (__main__.FormatPriceTestCase) ... ok
 test_input_integer_string (__main__.FormatPriceTestCase) ... ok
 test_round_half_up (__main__.FormatPriceTestCase) ... ok
 test_trailing_zeros_value (__main__.FormatPriceTestCase) ... ok
 
 ----------------------------------------------------------------------
-Ran 6 tests in 0.001s
+Ran 5 tests in 0.001s
 
-OK
+OKK
 ```
 
 # Цели проекта
